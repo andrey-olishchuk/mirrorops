@@ -27,7 +27,7 @@ jobs:
           git config --global user.name 'bobroe'
           git config --global user.email 'bobroe.web@gmail.com'
           git config --add --local core.sshCommand 'ssh -i /home/runner/.ssh/id_rsa'
-          git remote set-url --add --push origin https://bobroe@bitbucket.org/bobroe/mirrorops.git
+          git remote set-url --add --push origin git@bitbucket.org:bobroe/mirrorops.git
           git add *
           git commit -am "Mirroring commit"
           git push -u origin --all
