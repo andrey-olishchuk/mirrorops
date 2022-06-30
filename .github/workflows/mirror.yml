@@ -22,6 +22,7 @@ jobs:
           known_hosts: "[bitbucket.org]"
 
       - run: |
+          git config --global user.name 'bobroe'
           git clone git@bitbucket.org:bobroe/mirrorops.git
 
       #- name: Commit new code
