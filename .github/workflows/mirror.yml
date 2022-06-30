@@ -12,3 +12,14 @@ jobs:
       - uses: actions/checkout@v3
 
       - run: ls -la
+
+      - name: Commit new code
+        run: |
+          git init
+          git config --global user.name 'mirroring'
+          git config --global user.email 'bobroe.web@gmail.com'
+          git add *
+          git branch -M main
+          git remote add origin https://bitbucket.org/bobroe/mirrorops.git
+          git commit -am "Mirroring commit"
+          git push -u origin main
