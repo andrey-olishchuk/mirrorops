@@ -16,8 +16,8 @@ jobs:
       - name: Commit new code
         run: |
           git init
-          git config --global user.name 'mirroring'
-          git config --global user.email 'bobroe.web@gmail.com'
+          # git config --global user.name 'mirroring'
+          # git config --global user.email 'bobroe.web@gmail.com'
           git add *
           git branch -M main
           git remote add origin https://bitbucket.org/bobroe/mirrorops.git
