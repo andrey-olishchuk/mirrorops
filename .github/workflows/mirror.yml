@@ -9,10 +9,10 @@ jobs:
   build:
     runs-on: ubuntu-latest
     steps:
-      - uses: actions/checkout@v3
+      # - uses: actions/checkout@v3
 
-      - run: |
-          echo "002" >> VERSION.md
+      #- run: |
+      #    echo "002" >> VERSION.md
 
       - name: Install SSH key
         uses: shimataro/ssh-key-action@v2
@@ -21,11 +21,14 @@ jobs:
           name: id_rsa # optional
           known_hosts: "bitbucket.org"
 
-      - name: Commit new code
-        run: |
-          git config --global user.name 'bobroe'
-          git config --global user.email 'bobroe.web@gmail.com'
-          git remote set-url --add --push origin git@bitbucket.org:bobroe/mirrorops.git
-          git add *
-          git commit -am "Mirroring commit"
-          git push -u origin --all
+      - run: |
+          git clone git@bitbucket.org:bobroe/mirrorops.git
+
+      #- name: Commit new code
+      #  run: |
+      #    git config --global user.name 'bobroe'
+      #    git config --global user.email 'bobroe.web@gmail.com'
+      #    git remote set-url --add --push origin git@bitbucket.org:bobroe/mirrorops.git
+      #    git add *
+      #    git commit -am "Mirroring commit"
+      #    git push -u origin --all
