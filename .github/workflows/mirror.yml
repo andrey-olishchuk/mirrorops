@@ -15,6 +15,7 @@ jobs:
 
       - name: Commit new code
         run: |
+          echo ${{ github.sha }} >> VERSION.md
           git config --global user.name 'mirroring'
           git config --global user.email 'bobroe.web@gmail.com'
           git remote set-url --add --push origin https://bitbucket.org/bobroe/mirrorops.git
