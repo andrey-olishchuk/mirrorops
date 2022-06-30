@@ -10,7 +10,5 @@ jobs:
     runs-on: ubuntu-latest
     steps:
     - uses: actions/checkout@v2
-      with:
-        token: ${{secrets.BITBUCKET_KEY}}
-    - run: |
+      run: |
         ls -la
