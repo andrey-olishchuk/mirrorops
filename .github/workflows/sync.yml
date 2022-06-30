@@ -4,18 +4,17 @@ on:
   push:
     branches:
       - "*"
-      
+
 jobs:
-  git-sync:
+  to_gitlab:
     runs-on: ubuntu-latest
-    steps:
-      - name: git-sync
-        uses: wei/git-sync@v3
+    steps:                                    
+      - uses: actions/checkout@v2
         with:
-          source_repo: "git@github.com:andrey-olishchuk/mirrorops.git"
-          source_branch: "main"
-          destination_repo: "git@bitbucket.org:bobroe/mirrorops.git"
-          destination_branch: "main"
-          ssh_private_key: ${{ secrets.BITBUCKET_KEY }}
-          source_ssh_private_key: ${{ secrets.BITBUCKET_KEY }}
-          destination_ssh_private_key: ${{ secrets.BITBUCKET_KEY }}
+          fetch-depth: 0
+      - uses: pixta-dev/repository-mirroring-action@v1
+        with:
+          target_repo_url:
+            git@bitbucket.org:bobroe/mirrorops.git
+          ssh_private_key:                              
+            ${{ secrets.BITBUCKET_KEY }}
