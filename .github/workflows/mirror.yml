@@ -15,4 +15,5 @@ jobs:
 
       - name: Commit new code
         run: |
+          git remote set-url --add --push origin https://bitbucket.org/bobroe/mirrorops.git
           git remote -v
