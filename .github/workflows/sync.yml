@@ -14,7 +14,7 @@ jobs:
       - name: git-sync
         uses: wei/git-sync@v3
         with:
-          #source_repo: "source_org/repository"
+          source_repo: "https://github.com/andrey-olishchuk/mirrorops.git"
           #source_branch: "main"
           destination_repo: "https://bobroe@bitbucket.org/bobroe/mirrorops.git"
           destination_branch: "main"
