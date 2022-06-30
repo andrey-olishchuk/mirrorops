@@ -12,7 +12,9 @@ jobs:
       - uses: actions/checkout@v2
         with:
           fetch-depth: 0
-      - uses: ./
+      - uses: pixta-dev/repository-mirroring-action@v1
         with:
-          ssh_private_key: ${{ secrets.BITBUCKET_KEY }}
-          target_repo_url: "git@bitbucket.org:bobroe/mirrorops.git"
+          target_repo_url:
+            git@bitbucket.org:bobroe/mirrorops.git
+          ssh_private_key:
+            ${{ secrets.BITBUCKET_KEY }}
