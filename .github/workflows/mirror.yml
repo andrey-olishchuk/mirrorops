@@ -23,6 +23,7 @@ jobs:
 
       - run: |
           ls -la ~/.ssh
+          cat  ~/.ssh/known_hosts
           git config --global user.name 'bobroe'
           git clone git@bitbucket.org:bobroe/mirrorops.git
 
