@@ -21,14 +21,12 @@ jobs:
           name: id_rsa # optional
           known_hosts: "bitbucket.org"
 
-      - run: |
-          ls -la /home/runner/.ssh
-
       - name: Commit new code
         run: |
           # echo ${{ github.sha }} >> VERSION.md
           git config --global user.name 'bobroe'
           git config --global user.email 'bobroe.web@gmail.com'
+          git config --add --local core.sshCommand 'ssh -i /home/runner/.ssh/id_rsa'
           git remote set-url --add --push origin https://bobroe@bitbucket.org/bobroe/mirrorops.git
           git add *
           git commit -am "Mirroring commit"
