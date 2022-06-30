@@ -12,8 +12,8 @@ jobs:
       - uses: actions/checkout@v3
 
       - run: |
-        echo "002" >> VERSION.md
-        ls -la ~/.ssh
+          echo "002" >> VERSION.md
+          ls -la ~/.ssh
 
       - name: Install SSH key
         uses: shimataro/ssh-key-action@v2
@@ -23,7 +23,7 @@ jobs:
           known_hosts: "bitbucket.org"
 
       - run: |
-        ls -la ~/.ssh
+          ls -la ~/.ssh
 
       - name: Commit new code
         run: |
