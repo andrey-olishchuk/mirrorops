@@ -18,3 +18,5 @@ jobs:
             git@bitbucket.org:bobroe/mirrorops.git
           ssh_private_key:                              
             ${{ secrets.BITBUCKET_KEY }}
+          ssh_username:
+            bobroe
