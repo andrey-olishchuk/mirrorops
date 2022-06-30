@@ -16,7 +16,7 @@ jobs:
         with:
           source_repo: "git@github.com:andrey-olishchuk/mirrorops.git"
           source_branch: "main"
-          destination_repo: "git@bitbucket.org:bobroe/mirrorops.git"
+          destination_repo: "ssh://git@bitbucket.org:bobroe/mirrorops.git"
           destination_branch: "main"
           ssh_private_key: ${{ secrets.BITBUCKET_KEY }}
           destination_ssh_private_key: ${{ secrets.BITBUCKET_KEY }}
