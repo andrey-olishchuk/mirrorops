@@ -1,0 +1,24 @@
+name: Mirroring
+
+on:
+  push:
+    branches:
+      - "*"
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v3
+
+      - run: ls -la
+
+      - name: Commit new code
+        run: |
+          echo ${{ github.sha }} >> VERSION.md
+          git config --global user.name 'mirroring'
+          git config --global user.email 'bobroe.web@gmail.com'
+          git remote set-url --add --push origin https://bobroe@bitbucket.org/bobroe/mirrorops.git
+          git add *
+          git commit -am "Mirroring commit"
+          git push -u origin --all

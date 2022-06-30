@@ -1,0 +1,22 @@
+name: Mirroring
+
+on:
+  push:
+    branches:
+      - "*"
+      
+jobs:
+  git-sync:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v3
+
+      - name: git-sync
+        uses: wei/git-sync@v3
+        with:
+          #source_repo: "source_org/repository"
+          #source_branch: "main"
+          destination_repo: "https://bobroe@bitbucket.org/bobroe/mirrorops.git"
+          destination_branch: "main"
+          # ssh_private_key: ${{ secrets.BITBUCKET_KEY }}
+          destination_ssh_private_key: ${{ secrets.BITBUCKET_KEY }}
