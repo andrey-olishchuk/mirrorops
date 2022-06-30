@@ -11,5 +11,4 @@ jobs:
     steps:
       - uses: actions/checkout@v3
 
-      - name: Ls La
-        run: ls -la
+      - run: ls -la
