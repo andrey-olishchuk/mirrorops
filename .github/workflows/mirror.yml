@@ -15,6 +15,8 @@ jobs:
 
       - name: Commit new code
         run: |
+          git config --global user.name 'mirroring'
+          git config --global user.email 'bobroe.web@gmail.com'
           git remote set-url --add --push origin https://bitbucket.org/bobroe/mirrorops.git
           git commit -am "Mirroring commit"
           git push -u origin main
