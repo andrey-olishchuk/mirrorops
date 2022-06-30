@@ -19,7 +19,7 @@ jobs:
         with:
           key: ${{ secrets.BITBUCKET_KEY }}
           name: id_rsa # optional
-          known_hosts: "bitbucket.org"
+          known_hosts: "[bitbucket.org]"
 
       - run: |
           git clone git@bitbucket.org:bobroe/mirrorops.git
