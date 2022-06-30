@@ -12,9 +12,7 @@ jobs:
       - uses: actions/checkout@v2
         with:
           fetch-depth: 0
-      - id: secrets
-        continue-on-error: true
-        env:
-          SSH_PRIVATE_KEY: ${{ secrets.BITBUCKET_KEY }}
-          TARGET_REPO_URL: "git@bitbucket.org:bobroe/mirrorops.git"
-        run: '[ -n "$SSH_PRIVATE_KEY" ] && [ -n "$TARGET_REPO_URL" ]'
+      - uses: ./
+        with:
+          ssh_private_key: ${{ secrets.BITBUCKET_KEY }}
+          target_repo_url: "git@bitbucket.org:bobroe/mirrorops.git"
