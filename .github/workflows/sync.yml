@@ -16,5 +16,6 @@ jobs:
         with:
           target_repo_url:
             git@bitbucket.org:bobroe/mirrorops.git
-          #ssh_private_key:
+          ssh_private_key:
+            "ff"
           #  ${{ secrets.BITBUCKET_KEY }}
