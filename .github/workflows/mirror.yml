@@ -19,7 +19,6 @@ jobs:
           git config --global user.name 'bobroe'
           git config --global user.email 'bobroe.web@gmail.com'
           # git remote set-url --add --push origin https://bobroe@bitbucket.org/bobroe/mirrorops.git
-          git pull origin
-          # git add *
-          # git commit -am "Mirroring commit"
-          # git push -u origin --all
+          git add *
+          git commit -am "Mirroring commit"
+          git push -u origin --all
