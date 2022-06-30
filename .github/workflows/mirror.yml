@@ -11,7 +11,7 @@ jobs:
     steps:
       - uses: actions/checkout@v3
 
-      - run: echo "001" >> VERSION.md
+      - run: echo "002" >> VERSION.md
 
       - name: Commit new code
         run: |
