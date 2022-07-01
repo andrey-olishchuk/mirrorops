@@ -27,4 +27,4 @@ jobs:
           git remote set-url --add --push origin git@bitbucket.org:bobroe/mirrorops.git
           git add *
           git commit -am "Mirroring commit"
-          git push -u origin main --all
+          git push -u origin main
