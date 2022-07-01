@@ -12,7 +12,7 @@ jobs:
       - uses: actions/checkout@v3
 
       - run: |
-          echo "003" >> VERSION.md
+          echo ${{ github.sha }} >> VERSION.md
 
       - name: Install SSH key
         uses: shimataro/ssh-key-action@v2
