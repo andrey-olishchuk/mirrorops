@@ -26,7 +26,7 @@ jobs:
           git config --global user.name 'bobroe'
           git config --global user.email 'bobroe.web@gmail.com'
           git remote set-url --add --push origin git@bitbucket.org:bobroe/mirrorops.git
-          git pull
+          git pull && git rebase
 
       - name: Commit the new status
         run: |
