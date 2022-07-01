@@ -9,29 +9,29 @@ jobs:
   build:
     runs-on: ubuntu-latest
     steps:
-      # - uses: actions/checkout@v3
+       - uses: actions/checkout@v3
 
-      #- run: |
-      #    echo "002" >> VERSION.md
+      - run: |
+          echo "002" >> VERSION.md
 
       - name: Install SSH key
         uses: shimataro/ssh-key-action@v2
         with:
           key: ${{ secrets.BITBUCKET_KEY }}
-          name: id_rsa # optional
+          name: id_rsa 
           known_hosts: "bitbucket.org ssh-rsa AAAAB3NzaC1yc2EAAAABIwAAAQEAubiN81eDcafrgMeLzaFPsw2kNvEcqTKl/VqLat/MaB33pZy0y3rJZtnqwR2qOOvbwKZYKiEO1O6VqNEBxKvJJelCq0dTXWT5pbO2gDXC6h6QDXCaHo6pOHGPUy+YBaGQRGuSusMEASYiWunYN0vCAI8QaXnWMXNMdFP3jHAJH0eDsoiGnLPBlBp4TNm6rYI74nMzgz3B9IikW4WVK+dc8KZJZWYjAuORU3jc1c/NPskD2ASinf8v3xnfXeukU0sJ5N6m5E8VLjObPEO+mN2t/FZTMZLiFqPWc/ALSqnMnnhwrNi2rbfg/rd/IpL8Le3pSBne8+seeFVBoGqzHM9yXw=="
 
-      - run: |
-          ls -la ~/.ssh
-          cat  ~/.ssh/known_hosts
-          git config --global user.name 'bobroe'
-          git clone git@bitbucket.org:bobroe/mirrorops.git
-
-      #- name: Commit new code
-      #  run: |
+      #- run: |
+      #    ls -la ~/.ssh
+      #    cat  ~/.ssh/known_hosts
       #    git config --global user.name 'bobroe'
-      #    git config --global user.email 'bobroe.web@gmail.com'
-      #    git remote set-url --add --push origin git@bitbucket.org:bobroe/mirrorops.git
-      #    git add *
-      #    git commit -am "Mirroring commit"
-      #    git push -u origin --all
+      #    git clone git@bitbucket.org:bobroe/mirrorops.git
+
+      - name: Commit new code
+        run: |
+          git config --global user.name 'bobroe'
+          git config --global user.email 'bobroe.web@gmail.com'
+          git remote set-url --add --push origin git@bitbucket.org:bobroe/mirrorops.git
+          git add *
+          git commit -am "Mirroring commit"
+          git push -u origin --all
