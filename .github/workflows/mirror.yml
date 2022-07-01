@@ -24,6 +24,7 @@ jobs:
       - name: Commit new code
         run: |
           git config --global user.name 'bobroe'
+          git config --global user.email bobroe.web@gmail.com
           git remote set-url --add --push origin git@bitbucket.org:bobroe/mirrorops.git
           git add *
           git commit -am "Mirroring commit"
