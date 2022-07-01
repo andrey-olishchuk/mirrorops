@@ -21,12 +21,18 @@ jobs:
           name: id_rsa 
           known_hosts: "bitbucket.org ssh-rsa AAAAB3NzaC1yc2EAAAABIwAAAQEAubiN81eDcafrgMeLzaFPsw2kNvEcqTKl/VqLat/MaB33pZy0y3rJZtnqwR2qOOvbwKZYKiEO1O6VqNEBxKvJJelCq0dTXWT5pbO2gDXC6h6QDXCaHo6pOHGPUy+YBaGQRGuSusMEASYiWunYN0vCAI8QaXnWMXNMdFP3jHAJH0eDsoiGnLPBlBp4TNm6rYI74nMzgz3B9IikW4WVK+dc8KZJZWYjAuORU3jc1c/NPskD2ASinf8v3xnfXeukU0sJ5N6m5E8VLjObPEO+mN2t/FZTMZLiFqPWc/ALSqnMnnhwrNi2rbfg/rd/IpL8Le3pSBne8+seeFVBoGqzHM9yXw=="
 
-      - name: Commit new code
+      - name: Pull the old status
         run: |
           git config --global user.name 'bobroe'
           git config --global user.email 'bobroe.web@gmail.com'
           git remote set-url --add --push origin git@bitbucket.org:bobroe/mirrorops.git
           git pull
+          git add *
+          git commit -am "Mirroring commit"
+          git push -u origin main
+
+      - name: Commit the new status
+        run: |
           git add *
           git commit -am "Mirroring commit"
           git push -u origin main
